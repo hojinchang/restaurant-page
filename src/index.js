@@ -1,7 +1,10 @@
 import './style.css';
+import BackgroundImg from './background.jpg';
 
 const initializeWebsite = () => {
-    const content = document.querySelector("#content");
+    const content = document.createElement("div");
+    content.id = "content";
+    document.body.appendChild(content);
 
     const createHeader = () => {
         const header = document.createElement("header");
@@ -12,6 +15,13 @@ const initializeWebsite = () => {
         title.textContent = "My Restuarant";
 
         header.appendChild(title);
+
+        console.log(header)
+
+        const backgroundImg = new Image();
+        backgroundImg.src = BackgroundImg;
+
+        header.appendChild(backgroundImg);
 
         return header;
     }
@@ -46,6 +56,7 @@ const initializeWebsite = () => {
     content.appendChild(createHeader());
     content.appendChild(createMain());
     content.appendChild(createFooter());
+
 };
 
 
