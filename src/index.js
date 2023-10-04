@@ -1,3 +1,5 @@
+import './style.css';
+
 const initializeWebsite = () => {
     const content = document.querySelector("#content");
 
