@@ -1,27 +1,39 @@
 import './style.css';
-import BackgroundImg from './background.jpg';
 
 const initializeWebsite = () => {
-    const content = document.createElement("div");
-    content.id = "content";
-    document.body.appendChild(content);
-
+    
     const createHeader = () => {
+        function createNavigation() {
+            const navigation = document.createElement("div");
+
+            const homeButton = document.createElement("button");
+            homeButton.classList.add("nav-button");
+            homeButton.textContent = "Home";
+
+            const menuButton = document.createElement("button");
+            menuButton.classList.add("nav-button");
+            menuButton.textContent = "Menu";
+
+            const contactButton = document.createElement("button");
+            contactButton.classList.add("nav-button");
+            contactButton.textContent = "Contact";
+
+            navigation.appendChild(homeButton);
+            navigation.appendChild(menuButton);
+            navigation.appendChild(contactButton);
+
+            return navigation;
+        }
+
         const header = document.createElement("header");
         header.classList.add("header");
 
         const title = document.createElement("h1");
         title.classList.add("title");
-        title.textContent = "My Restuarant";
+        title.textContent = "The Garden Bistro";
 
         header.appendChild(title);
-
-        console.log(header)
-
-        const backgroundImg = new Image();
-        backgroundImg.src = BackgroundImg;
-
-        header.appendChild(backgroundImg);
+        header.appendChild(createNavigation());
 
         return header;
     }
@@ -52,6 +64,11 @@ const initializeWebsite = () => {
 
         return footer;
     }
+
+
+    const content = document.createElement("div");
+    content.id = "content";
+    document.body.appendChild(content);
 
     content.appendChild(createHeader());
     content.appendChild(createMain());
