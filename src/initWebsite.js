@@ -1,6 +1,8 @@
 import './style.css';
+import homeTab from './home.js';
 
 const websiteSkeleton = (() => {
+
     const createHeader = () => {
         function createNavigation() {
             const navigation = document.createElement("div");
@@ -8,14 +10,20 @@ const websiteSkeleton = (() => {
 
             const homeButton = document.createElement("button");
             homeButton.classList.add("nav-button");
+            homeButton.setAttribute("id", "home-button");
             homeButton.textContent = "Home";
+            homeButton.addEventListener("click", (e) => {
+                homeTab();
+            });
 
             const menuButton = document.createElement("button");
             menuButton.classList.add("nav-button");
+            menuButton.setAttribute("id", "menu-button");
             menuButton.textContent = "Menu";
 
             const contactButton = document.createElement("button");
             contactButton.classList.add("nav-button");
+            contactButton.setAttribute("id", "contact-button");
             contactButton.textContent = "Contact";
 
             navigation.appendChild(homeButton);
@@ -67,6 +75,7 @@ const websiteSkeleton = (() => {
 
     return {createHeader, createMain, createFooter}
 })();
+
 
 
 function initializeWebsite() {
