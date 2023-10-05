@@ -21,6 +21,8 @@ font-style: normal;
 :root {
     --title-font: "Dancing Script", cursive;
     --content-font: 'Fragment Mono', monospace;
+    --content-background-colour: rgba(0, 0, 0, 0.8);
+    color: white;
 }
 
 
@@ -30,16 +32,26 @@ body {
     background-size: cover;
 }
 
+ul {
+    list-style: none;
+}
+
 #header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--content-background-colour);
+    margin-bottom: 3rem;
     padding: 2rem;
     font-family: var(--title-font);
-    color: white;
     font-size: 2.2rem;
+}
+
+#content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
@@ -58,4 +70,48 @@ body {
 
 .nav-button:hover {
     transform: translateY(-0.5rem);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem;
+}
+
+.home-description,
+.home-hours,
+.home-location {
+    background: var(--content-background-colour);
+    font-family: var(--content-font);
+    margin-bottom: 2rem;
+    text-align: center;
+    border-radius: 10px;;
+}
+
+.home-header {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--content-background-colour);
+    height: 30px;
+    margin-top: auto;
+
+    font-family: var(--content-font);
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
 }

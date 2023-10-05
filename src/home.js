@@ -7,12 +7,17 @@ const createHome = (() => {
         const descriptionContainer = document.createElement("div");
         descriptionContainer.classList.add("container", "home-description");
 
+        const descriptionHeader = document.createElement("h3");
+        descriptionHeader.classList.add("home-header")
+        descriptionHeader.textContent = "The Garden Bistro";
+
         const description = document.createElement("p");
         description.textContent = "The Garden Bistro is a charming, rustic restaurant nestled in the heart of a picturesque countryside. \
         It offers a unique dining experience surrounded by lush greenery, blooming flowers, and the soothing sounds of nature. \
         The restaurant is designed to be an oasis of tranquility, where guests can escape the hustle and bustle of the city and \
         savor delicious dishes made from locally-sourced, fresh ingredients.";
 
+        descriptionContainer.appendChild(descriptionHeader);
         descriptionContainer.appendChild(description);
 
         return descriptionContainer;
@@ -23,7 +28,7 @@ const createHome = (() => {
         hoursContainer.classList.add("container", "home-hours");
 
         const hoursHeader = document.createElement("h3");
-        hoursHeader.classList.add("hoursHeader");
+        hoursHeader.classList.add("home-header");
         hoursHeader.textContent = "Hours"
 
         const hours = document.createElement("ul");
@@ -54,7 +59,7 @@ const createHome = (() => {
         locationContainer.classList.add("container", "home-location");
 
         const locationHeader = document.createElement("h3");
-        locationHeader.classList.add("locationHeader");
+        locationHeader.classList.add("home-header");
         locationHeader.textContent = "Location";
 
         const location = document.createElement("p");
