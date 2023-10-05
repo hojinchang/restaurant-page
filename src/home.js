@@ -88,6 +88,7 @@ const createHome = (() => {
 
 function homeTab () {
     const main = document.getElementById("main");
+    main.textContent = "";
     main.appendChild(createHome.home());
 }
 
