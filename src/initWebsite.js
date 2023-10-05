@@ -3,6 +3,15 @@ import homeTab from './home.js';
 
 const websiteSkeleton = (() => {
 
+    const setActive = (e) => {
+        const navButtons = document.querySelectorAll(".nav-button");
+        navButtons.forEach(button => {
+            button.classList.remove("active");
+        })
+
+        e.target.classList.add("active");
+    }
+
     const createHeader = () => {
         function createNavigation() {
             const navigation = document.createElement("div");
@@ -13,6 +22,8 @@ const websiteSkeleton = (() => {
             homeButton.setAttribute("id", "home-button");
             homeButton.textContent = "Home";
             homeButton.addEventListener("click", (e) => {
+                if (e.target.classList.contains("active")) return;
+                setActive(e);
                 homeTab();
             });
 
