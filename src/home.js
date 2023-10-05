@@ -70,11 +70,10 @@ const createHome = (() => {
 
         return locationContainer;
     }
-    
+
     const home = () => {
         const homeTab = document.createElement("div");
         homeTab.setAttribute("id", "home");
-        homeTab.classList.add("tabcontent");
 
         homeTab.appendChild(createRestaurantDescription());
         homeTab.appendChild(createRestaurantHours());
