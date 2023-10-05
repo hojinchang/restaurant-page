@@ -94,6 +94,12 @@ ul {
     font-size: 1.5rem;
 }
 
+.hours {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 
 #footer {
     display: flex;
