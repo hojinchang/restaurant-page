@@ -1,8 +1,4 @@
 const createHome = (() => {
-    const home = document.createElement("div");
-    home.setAttribute("id", "home");
-    home.classList.add("tab-content");
-
     const createRestaurantDescription = () => {
         const descriptionContainer = document.createElement("div");
         descriptionContainer.classList.add("container", "home-description");
@@ -74,15 +70,26 @@ const createHome = (() => {
 
         return locationContainer;
     }
+    
+    const home = () => {
+        const homeTab = document.createElement("div");
+        homeTab.setAttribute("id", "home");
+        homeTab.classList.add("tabcontent");
 
-    return {createRestaurantDescription, createRestaurantHours, createLocation};
+        homeTab.appendChild(createRestaurantDescription());
+        homeTab.appendChild(createRestaurantHours());
+        homeTab.appendChild(createLocation());
+
+        return homeTab;
+    }
+
+
+    return {home};
 })();
 
 function homeTab () {
     const main = document.getElementById("main");
-    main.appendChild(createHome.createRestaurantDescription());
-    main.appendChild(createHome.createRestaurantHours());
-    main.appendChild(createHome.createLocation());
+    main.appendChild(createHome.home());
 }
 
 export default homeTab;
