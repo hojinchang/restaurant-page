@@ -5,6 +5,7 @@ const initializeWebsite = () => {
     const createHeader = () => {
         function createNavigation() {
             const navigation = document.createElement("div");
+            navigation.classList.add("nav");
 
             const homeButton = document.createElement("button");
             homeButton.classList.add("nav-button");
