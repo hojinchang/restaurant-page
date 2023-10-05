@@ -1,7 +1,6 @@
 import './style.css';
 
-const initializeWebsite = () => {
-    
+const websiteSkeleton = (() => {
     const createHeader = () => {
         function createNavigation() {
             const navigation = document.createElement("div");
@@ -66,16 +65,19 @@ const initializeWebsite = () => {
         return footer;
     }
 
+    return {createHeader, createMain, createFooter}
+})();
 
+
+function initializeWebsite() {
     const content = document.createElement("div");
     content.id = "content";
     document.body.appendChild(content);
 
-    content.appendChild(createHeader());
-    content.appendChild(createMain());
-    content.appendChild(createFooter());
-
-};
+    content.appendChild(websiteSkeleton.createHeader());
+    content.appendChild(websiteSkeleton.createMain());
+    content.appendChild(websiteSkeleton.createFooter());
+}
 
 
 export default initializeWebsite;
