@@ -26,7 +26,7 @@ const websiteSkeleton = (() => {
         }
 
         const header = document.createElement("header");
-        header.classList.add("header");
+        header.setAttribute("id", "header");
 
         const title = document.createElement("h1");
         title.classList.add("title");
@@ -40,14 +40,14 @@ const websiteSkeleton = (() => {
 
     const createMain = () => {
         const main = document.createElement("main");
-        main.classList.add("main");
+        main.setAttribute("id", "main");
 
         return main;
     }
 
     const createFooter = () => {
         const footer = document.createElement("footer");
-        footer.classList.add("footer");
+        footer.setAttribute("id", "footer");
         
         const profileLink = document.createElement("a");
         profileLink.href = "https://github.com/hojinchang";
