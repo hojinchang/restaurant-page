@@ -105,6 +105,8 @@ function initializeWebsite() {
     document.body.appendChild(websiteSkeleton.createHeader());
     document.body.appendChild(websiteSkeleton.createMain());
     document.body.appendChild(websiteSkeleton.createFooter());
+
+    homeTab();
 }
 
 
