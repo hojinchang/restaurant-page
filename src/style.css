@@ -16,7 +16,6 @@ font-style: normal;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white;
 }
 
 :root {
@@ -26,6 +25,7 @@ font-style: normal;
     --main-margin: 3rem;
     --max-container-width: 50rem;
     --container-border-radius: 10px;
+    --container-padding: 3rem;
 }
 
 body {
@@ -37,6 +37,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: white;
 }
 
 ul {
@@ -81,7 +82,7 @@ ul {
     font-family: var(--content-font);
     text-align: center;
     border-radius: var(--container-border-radius);
-    padding: 3rem;
+    padding: var(--container-padding);
 }
 
 .home-content-container:first-child {
@@ -105,6 +106,43 @@ ul {
     gap: 5px;
 }
 
+#menu {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    background: var(--content-background-colour);
+    max-width: var(--max-container-width);
+    margin: var(--main-margin) auto;
+    border-radius: var(--container-border-radius);
+    font-family: var(--content-font);
+    padding: var(--container-padding);
+}
+
+.menu-header {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.item:last-child {
+    margin-bottom: 0;
+}
+
+.item-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    gap: 0.5rem;
+}
+
+.item-description {
+    color: rgba(255, 255, 255, 0.7);
+}
 
 #footer {
     display: flex;

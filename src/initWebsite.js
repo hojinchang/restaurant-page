@@ -1,14 +1,19 @@
 import './style.css';
 import homeTab from './home.js';
+import menuTab from './menu';
 
 const websiteSkeleton = (() => {
+
+    const active = (e) => {
+        return e.target.classList.contains("active");
+    }
 
     const setActive = (e) => {
         const navButtons = document.querySelectorAll(".nav-button");
         navButtons.forEach(button => {
             button.classList.remove("active");
         })
-
+        
         e.target.classList.add("active");
     }
 
@@ -22,15 +27,22 @@ const websiteSkeleton = (() => {
             homeButton.setAttribute("id", "home-button");
             homeButton.textContent = "Home";
             homeButton.addEventListener("click", (e) => {
-                if (e.target.classList.contains("active")) return;
-                setActive(e);
-                homeTab();
+                 if (!active(e)) {
+                    setActive(e);
+                    homeTab();
+                 };
             });
 
             const menuButton = document.createElement("button");
             menuButton.classList.add("nav-button");
             menuButton.setAttribute("id", "menu-button");
             menuButton.textContent = "Menu";
+            menuButton.addEventListener("click", (e) => {
+                if (!active(e)) {
+                    setActive(e);
+                    menuTab();
+                }
+            })
 
             const contactButton = document.createElement("button");
             contactButton.classList.add("nav-button");
@@ -90,13 +102,9 @@ const websiteSkeleton = (() => {
 
 
 function initializeWebsite() {
-    const content = document.createElement("div");
-    content.id = "content";
-    document.body.appendChild(content);
-
-    content.appendChild(websiteSkeleton.createHeader());
-    content.appendChild(websiteSkeleton.createMain());
-    content.appendChild(websiteSkeleton.createFooter());
+    document.body.appendChild(websiteSkeleton.createHeader());
+    document.body.appendChild(websiteSkeleton.createMain());
+    document.body.appendChild(websiteSkeleton.createFooter());
 }
 
 
