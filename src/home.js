@@ -1,7 +1,7 @@
 const createHome = (() => {
     const createRestaurantDescription = () => {
         const descriptionContainer = document.createElement("div");
-        descriptionContainer.classList.add("container", "home-description");
+        descriptionContainer.classList.add("home-content-container", "home-description");
 
         const descriptionHeader = document.createElement("h3");
         descriptionHeader.classList.add("home-header")
@@ -21,7 +21,7 @@ const createHome = (() => {
 
     const createRestaurantHours = () => {
         const hoursContainer = document.createElement("div");
-        hoursContainer.classList.add("container", "home-hours");
+        hoursContainer.classList.add("home-content-container", "home-hours");
 
         const hoursHeader = document.createElement("h3");
         hoursHeader.classList.add("home-header");
@@ -52,7 +52,7 @@ const createHome = (() => {
 
     const createLocation = () => {
         const locationContainer = document.createElement("div");
-        locationContainer.classList.add("container", "home-location");
+        locationContainer.classList.add("home-content-container", "home-location");
 
         const locationHeader = document.createElement("h3");
         locationHeader.classList.add("home-header");
