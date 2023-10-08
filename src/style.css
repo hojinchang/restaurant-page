@@ -74,6 +74,11 @@ ul {
     transform: translateY(-0.5rem);
 }
 
+.nav-button.active {
+    text-decoration: underline;
+    text-underline-offset: 1em;
+}
+
 .home-content-container {
     text-align: center;
 }
