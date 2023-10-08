@@ -24,7 +24,7 @@ const websiteSkeleton = (() => {
             navigation.classList.add("nav");
 
             const homeButton = document.createElement("button");
-            homeButton.classList.add("nav-button");
+            homeButton.classList.add("nav-button", "active");
             homeButton.setAttribute("id", "home-button");
             homeButton.textContent = "Home";
             homeButton.addEventListener("click", (e) => {
