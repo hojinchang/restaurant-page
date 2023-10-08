@@ -8,12 +8,13 @@ const createContact = (() => {
     const createPhoneNumber = () => {
         const phoneContainer = document.createElement("div");
         phoneContainer.classList.add("contact-content-container");
-        const Icon = new Image();
-        Icon.src = PhoneIcon;
+        const icon = new Image();
+        icon.classList.add("icon");
+        icon.src = PhoneIcon;
         const phoneNumber = document.createElement("p");
         phoneNumber.textContent = "123-456-7890";
 
-        phoneContainer.appendChild(Icon);
+        phoneContainer.appendChild(icon);
         phoneContainer.appendChild(phoneNumber);
 
         return phoneContainer;
@@ -23,6 +24,7 @@ const createContact = (() => {
         const addressContainer = document.createElement("div");
         addressContainer.classList.add("contact-content-container");
         const icon = new Image();
+        icon.classList.add("icon");
         icon.src = LocationIcon;
         const address = createAddress();
 
