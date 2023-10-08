@@ -58,15 +58,10 @@ const createHome = (() => {
         locationHeader.classList.add("home-header");
         locationHeader.textContent = "Location";
 
-        const location = document.createElement("p");
-        location.textContent = "777 Pacific Blvd"
-        const lineBreak = document.createElement("br");
-        location.appendChild(lineBreak);
-        const locationCity = document.createTextNode("Vancouver, BC V6B 4Y8")
-        location.appendChild(locationCity);
+        const address = createAddress();
 
         locationContainer.appendChild(locationHeader);
-        locationContainer.appendChild(location);
+        locationContainer.appendChild(address);
 
         return locationContainer;
     }
@@ -86,10 +81,21 @@ const createHome = (() => {
     return {home};
 })();
 
+const createAddress = () => {
+    const adress = document.createElement("p");
+    adress.textContent = "777 Pacific Blvd"
+    const lineBreak = document.createElement("br");
+    adress.appendChild(lineBreak);
+    const locationCity = document.createTextNode("Vancouver, BC V6B 4Y8")
+    adress.appendChild(locationCity);
+
+    return adress;
+}
+
 function homeTab () {
     const main = document.getElementById("main");
     main.textContent = "";
     main.appendChild(createHome.home());
 }
 
-export default homeTab;
+export { homeTab, createAddress }

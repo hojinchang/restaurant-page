@@ -1,6 +1,7 @@
 import './style.css';
-import homeTab from './home.js';
+import { homeTab } from './home.js';
 import menuTab from './menu';
+import contactTab from './contact';
 
 const websiteSkeleton = (() => {
 
@@ -48,6 +49,12 @@ const websiteSkeleton = (() => {
             contactButton.classList.add("nav-button");
             contactButton.setAttribute("id", "contact-button");
             contactButton.textContent = "Contact";
+            contactButton.addEventListener("click", (e) => {
+                if(!active(e)) {
+                    setActive(e);
+                    contactTab();
+                }
+            })
 
             navigation.appendChild(homeButton);
             navigation.appendChild(menuButton);
